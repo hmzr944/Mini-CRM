@@ -1,22 +1,75 @@
 
-## Mini-CRM
 
-Ce projet est un mini CRM développé pour l'entraînement et l'apprentissage. Il utilise Laravel côté back-end et Inertia/Vue côté front-end. L'objectif est de gérer des clients, des utilisateurs et des paramètres de messagerie de façon simple et sécurisée.
 
-## Installation rapide
+# Mini-CRM
 
-1. Cloner le repo
-2. Copier `.env.example` en `.env` et adapter les variables
-3. Installer les dépendances PHP et JS
-4. Lancer les migrations et les seeders
-5. Démarrer le serveur
+Bienvenue sur mon projet Mini-CRM !
 
-## Fonctionnalités principales
-- Authentification et gestion des utilisateurs
-- Gestion des clients
-- Paramétrage de l'envoi d'emails
-- Interface moderne avec Vue et Tailwind
+Ce projet a été réalisé dans le cadre de ma formation en développement web. L'objectif : créer une appli pour gérer des clients, apprendre Laravel, galérer un peu avec Vue.js et Tailwind, et surtout progresser.
 
-## Auteur
+Ici, pas de magie IA, juste un étudiant qui code, teste, corrige, et recommence.
 
-Projet réalisé par [TonNom] pour l'entraînement personnel.
+
+## 🚀 Fonctionnalités
+
+- Connexion et inscription des utilisateurs
+- Ajout, modification, suppression de clients
+- Envoi d'emails (quand ça marche !)
+- Interface responsive (merci Tailwind)
+- Quelques tests unitaires (pour faire plaisir au prof)
+
+
+## 🛠️ Stack technique
+
+- Laravel (PHP)
+- Vue.js (Inertia)
+- Tailwind CSS
+- SQLite (pour la simplicité)
+- Vite
+
+
+## 📦 Installation
+
+1. Copier `.env.example` en `.env` et adapter les variables (ne mets pas tes vrais mots de passe !)
+2. Installer les dépendances PHP et JS :
+	```bash
+	composer install
+	npm install
+	```
+3. Générer la clé Laravel :
+	```bash
+	php artisan key:generate
+	```
+4. Lancer les migrations et seeders :
+	```bash
+	php artisan migrate --seed
+	```
+5. Démarrer le serveur :
+	```bash
+	php artisan serve
+	```
+
+
+## 📄 Démo
+
+Après l'installation, va sur [http://localhost:8000](http://localhost:8000) et croise les doigts !
+
+
+## ✨ Personnalisation
+
+Tu veux ajouter des modules ? Modifier le design ? Vas-y, le code est là pour ça. J'ai mis des commentaires pour m'y retrouver, mais si tu comprends pas, c'est normal : demande-moi ou améliore !
+
+
+## 👤 Auteur
+
+Projet réalisé par [TonNom], étudiant en développement web, amateur de bugfix et de café.
+
+
+## 📫 Contact
+
+Une question, une suggestion, un bug ? Contacte-moi à [ton.email@exemple.com](mailto:ton.email@exemple.com)
+
+
+---
+
+> Ce projet fait partie de mon portfolio étudiant. Merci d'avoir lu jusqu'ici ! Si tu veux voir le code, tester, ou juste t'inspirer, c'est open source.
