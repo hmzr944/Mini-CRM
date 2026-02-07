@@ -14,22 +14,28 @@ class MailConfigServiceProvider extends ServiceProvider
      */
    public function boot(): void
 {
+    // Évite si on est en console OU si la base de données n'existe pas encore
     if (app()->runningInConsole()) {
-        return; // Évite pendant les migrations
+        return;
     }
 
-    if (Schema::hasTable('mail_settings')) {
-        $mail = \App\Models\MailSetting::first();
-        if ($mail) {
-            Config::set('mail.mailers.smtp.transport', $mail->mail_mailer);
-            Config::set('mail.mailers.smtp.host', $mail->mail_host);
-            Config::set('mail.mailers.smtp.port', $mail->mail_port);
-            Config::set('mail.mailers.smtp.username', $mail->mail_username);
-            Config::set('mail.mailers.smtp.password', $mail->mail_password);
-            Config::set('mail.mailers.smtp.encryption', $mail->mail_encryption);
-            Config::set('mail.from.address', $mail->mail_from_address);
-            Config::set('mail.from.name', $mail->mail_from_name);
+    try {
+        if (Schema::hasTable('mail_settings')) {
+            $mail = \App\Models\MailSetting::first();
+            if ($mail) {
+                Config::set('mail.mailers.smtp.transport', $mail->mail_mailer);
+                Config::set('mail.mailers.smtp.host', $mail->mail_host);
+                Config::set('mail.mailers.smtp.port', $mail->mail_port);
+                Config::set('mail.mailers.smtp.username', $mail->mail_username);
+                Config::set('mail.mailers.smtp.password', $mail->mail_password);
+                Config::set('mail.mailers.smtp.encryption', $mail->mail_encryption);
+                Config::set('mail.from.address', $mail->mail_from_address);
+                Config::set('mail.from.name', $mail->mail_from_name);
+            }
         }
+    } catch (\Exception $e) {
+        // Ignore silencieusement si la base de données n'est pas encore prête
+        return;
     }
 }
 

@@ -29,7 +29,10 @@ COPY mini-crm /app
 RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
 # Create SQLite database if needed
-RUN mkdir -p database && touch database/database.sqlite
+RUN mkdir -p database && \
+    touch database/database.sqlite && \
+    chmod 777 database && \
+    chmod 666 database/database.sqlite
 
 # Expose port
 EXPOSE 8000
