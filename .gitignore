@@ -1,0 +1,11 @@
+node_modules/
+vendor/
+composer.lock
+package-lock.json
+.env
+.env.backup
+.env.production
+storage/logs/*
+!storage/logs/.gitkeep
+bootstrap/cache/*
+!bootstrap/cache/.gitkeep
