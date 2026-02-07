@@ -34,17 +34,15 @@ RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoload
 # Generate application key
 RUN php artisan key:generate --force
 
-# Create SQLite database if needed
-RUN mkdir -p database && \
-    touch database/database.sqlite && \
-    chmod 777 database && \
-    chmod 666 database/database.sqlite
-
 # Expose port
 EXPOSE 8000
 
 # Start application
-CMD php artisan migrate --force && \
+CMD mkdir -p database && \
+    touch database/database.sqlite && \
+    chmod 777 database && \
+    chmod 666 database/database.sqlite && \
+    php artisan migrate --force && \
     php artisan config:cache && \
     php artisan route:cache && \
     php artisan serve --host=0.0.0.0 --port=${PORT:-8000}
