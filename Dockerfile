@@ -25,8 +25,14 @@ WORKDIR /app
 # Copy application files
 COPY mini-crm /app
 
+# Create .env file from .env.example
+RUN cp .env.example .env
+
 # Install PHP dependencies
 RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+
+# Generate application key
+RUN php artisan key:generate --force
 
 # Create SQLite database if needed
 RUN mkdir -p database && \
@@ -38,8 +44,7 @@ RUN mkdir -p database && \
 EXPOSE 8000
 
 # Start application
-CMD php artisan key:generate --force && \
-    php artisan migrate --force && \
+CMD php artisan migrate --force && \
     php artisan config:cache && \
     php artisan route:cache && \
     php artisan serve --host=0.0.0.0 --port=${PORT:-8000}
