@@ -57,17 +57,18 @@ Après l'installation, va sur [http://localhost:8000](http://localhost:8000) et 
 
 ## ✨ Personnalisation
 
+
 Tu veux ajouter des modules ? Modifier le design ? Vas-y, le code est là pour ça. J'ai mis des commentaires pour m'y retrouver, mais si tu comprends pas, c'est normal : demande-moi ou améliore !
 
 
 ## 👤 Auteur
 
-Projet réalisé par [TonNom], étudiant en développement web, amateur de bugfix et de café.
+Projet réalisé par [Hamza Tanda], étudiant en développement web, amateur de bugfix et de café.
 
 
 ## 📫 Contact
 
-Une question, une suggestion, un bug ? Contacte-moi à [ton.email@exemple.com](mailto:ton.email@exemple.com)
+Une question, une suggestion, un bug ? Contacte-moi à [mezouarhamza3@gmail.com](mailto:mezouarhamza3@gmail.com)
 
 
 ---
