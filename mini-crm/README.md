@@ -63,7 +63,7 @@ Tu veux ajouter des modules ? Modifier le design ? Vas-y, le code est là po
 
 ## 👤 Auteur
 
-Projet réalisé par [Hamza Tanda], étudiant en développement web, amateur de bugfix et de café.
+Projet réalisé par Hamza Mezouar, étudiant en développement web, amateur de bugfix et de café.
 
 
 ## 📫 Contact
